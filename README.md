@@ -19,10 +19,16 @@ is **1.0.112** on Kubuntu/KDE Wayland.
 copilot plugin install arjith/copilot-kubuntu-desktop-kit
 ```
 
-For a local checkout:
+The tested CLI accepts this command but warns that direct repository installs
+are deprecated. [Marketplace review](https://github.com/github/awesome-copilot/issues/6437)
+is pending; the plugin is **not yet listed** there. Alternatively, review the
+tagged checkout and load it directly:
 
 ```bash
+git clone --branch v0.1.0 --depth 1 https://github.com/arjith/copilot-kubuntu-desktop-kit.git
+cd copilot-kubuntu-desktop-kit
 copilot --plugin-dir "$PWD" skill list
+copilot --plugin-dir "$PWD"
 ```
 
 Restart Copilot after installation. Choose an agent with `/agent`.
