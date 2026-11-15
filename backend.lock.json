@@ -1,0 +1,22 @@
+{
+  "repository": "agent-sh/computer-use-linux",
+  "tag": "v0.7.53",
+  "target": "x86_64-unknown-linux-gnu",
+  "artifacts": [
+    {
+      "name": "computer-use-linux",
+      "sha256": "9105b0caefe67881bd9549a51c59252d2f1dfe4306d9cc71be0091cd3085d122",
+      "size": 13540520
+    },
+    {
+      "name": "computer-use-linux-cosmic",
+      "sha256": "e4aa5ce948d63f4a815b7abd2cc177ccfa06ee1d366000343ac8ed84ea666158",
+      "size": 748832
+    },
+    {
+      "name": "computer-use-linux-indicator",
+      "sha256": "8cd75ee0394ff11f5176a5b7898989b9f40a29fd2083cab2a230285749bf642b",
+      "size": 3257320
+    }
+  ]
+}
