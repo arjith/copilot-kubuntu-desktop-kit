@@ -28,11 +28,15 @@ copilot --plugin-dir "$PWD" plugin list
 copilot --plugin-dir "$PWD" skill list
 ```
 
-Isolated-host checks must confirm namespaced agent selection and lazy MCP
-startup without replacing an existing desktop server. A readiness check is
-not capture permission. Full capture, focus, interruption, keyboard-layout and
-fractional-scaling coverage needs explicit desktop/device testing before
-advertising a configuration as supported.
+Isolated-host checks confirmed private GitHub installation, six-skill discovery
+and namespaced agent selection without changing personal configuration.
+On the initial Kubuntu/KDE Wayland host, a user-approved cropped test-window
+capture, coordinate click, portal keyboard press/backspace and accessibility
+readback also passed. Those results do not imply a broad device matrix.
+
+A readiness check is not capture permission. Interruption, keyboard-layout,
+multi-monitor and fractional-scaling coverage still need explicit testing before
+advertising additional configurations as supported.
 
 No update, installation or test may overwrite a user's Copilot profile,
 credentials, MCP configuration or other backend installation.
