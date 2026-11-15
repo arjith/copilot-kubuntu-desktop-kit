@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <title>Copilot Kubuntu Desktop Kit — Copilot CLI for KDE Wayland</title>
+  <desc>An unofficial integration, v0.1.0 experimental. The diagram shows Copilot CLI, the computer-use-linux backend, a user-approved KDE portal, and a requested KDE app.</desc>
+  <rect width="1200" height="630" fill="#f5f5ef"/>
+  <path d="M52 111h1096M52 545h1096" stroke="#9aa9a7"/>
+  <g font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+    <rect x="52" y="48" width="42" height="42" rx="4" fill="#193b47"/>
+    <path d="M62 60h22v18H62zM62 66h22m-16 6h10m-4-4 4 4-4 4" fill="none" stroke="#f5f5ef" stroke-width="1.8" stroke-linejoin="round"/>
+    <text x="111" y="77" fill="#192e35" font-size="23" font-weight="600">Copilot Kubuntu Desktop Kit</text>
+    <text x="1148" y="76" text-anchor="end" fill="#526269" font-size="17" font-family="ui-monospace, monospace">v0.1.0 / Experimental</text>
+
+    <text x="52" y="218" fill="#192e35" font-size="68" font-weight="650" letter-spacing="-3">Copilot CLI.</text>
+    <text x="52" y="299" fill="#005d79" font-size="68" font-weight="650" letter-spacing="-3">KDE Wayland.</text>
+    <text x="52" y="380" fill="#192e35" font-size="68" font-weight="650" letter-spacing="-3">Your permission.</text>
+    <text x="55" y="445" fill="#526269" font-size="21">An unofficial integration of computer-use-linux.</text>
+    <text x="55" y="479" fill="#526269" font-size="21">One app. One result you can check.</text>
+
+    <rect x="731" y="145" width="417" height="366" fill="#15313a"/>
+    <text x="759" y="181" fill="#b5e0e9" font-size="12" letter-spacing="1.5" font-family="ui-monospace, monospace">LOCAL CONTROL PATH</text>
+    <g fill="#1c3b45" stroke="#6f939b">
+      <rect x="759" y="199" width="361" height="54" rx="2"/>
+      <rect x="759" y="294" width="361" height="54" rx="2"/>
+      <rect x="759" y="433" width="361" height="54" rx="2"/>
+    </g>
+    <g fill="#f0f5ef" font-size="19" font-weight="550">
+      <text x="779" y="234">Copilot CLI · desktop-operator</text>
+      <text x="779" y="329">computer-use-linux · v0.7.53</text>
+      <text x="779" y="468">The requested KDE app</text>
+    </g>
+    <path d="M938 253v32m-5-5 5 5 5-5M938 348v24m0 35v18m-5-5 5 5 5-5" fill="none" stroke="#b5e0e9" stroke-width="1.5"/>
+    <text x="952" y="278" fill="#b5e0e9" font-size="13">stdio · MCP</text>
+    <path d="M759 389h32m297 0h32" stroke="#f0ca86" stroke-dasharray="3 4"/>
+    <rect x="797" y="372" width="285" height="35" fill="#15313a" stroke="#f0ca86"/>
+    <text x="939" y="395" fill="#f0ca86" text-anchor="middle" font-size="16">You approve the KDE portal</text>
+
+    <text x="52" y="587" fill="#526269" font-size="18" font-family="ui-monospace, monospace">github.com/arjith/copilot-kubuntu-desktop-kit</text>
+    <text x="1148" y="587" text-anchor="end" fill="#526269" font-size="17">Not endorsed by GitHub or KDE.</text>
+  </g>
+</svg>
