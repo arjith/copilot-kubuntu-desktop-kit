@@ -43,8 +43,10 @@ GitHub traffic covers 14 days; do not sum overlapping unique-user counts.
   disclose authorship and experimental scope. Respect maturity requirements.
 - **Upstream:** offer focused Copilot documentation or a verified compatibility
   fix, not an advertisement in unrelated issues.
-- **Show HN:** only after people can run the tagged release; disclose
-  attribution and limitations. Do not solicit votes.
+- **Hacker News:** its rules prohibit generated/AI-edited text and automated
+  posting. A maintainer must write and submit their own post; do not reuse
+  generated launch copy there. A Show HN also needs a runnable project.
+  Do not solicit votes.
 
 No bought stars, exchange rings, reward-for-star schemes, automated starring,
 mass unsolicited messages or coordinated engagement.
@@ -71,3 +73,4 @@ forecast is justified without actual payments and renewals.
 - [Patreon pricing](https://www.patreon.com/pricing)
 - [Patreon offering guidelines](https://www.patreon.com/policy/benefits)
 - [Show HN rules](https://news.ycombinator.com/showhn.html)
+- [HN posting guidelines](https://news.ycombinator.com/newsguidelines.html)

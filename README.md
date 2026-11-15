@@ -3,40 +3,53 @@
 [![Checks](https://github.com/arjith/copilot-kubuntu-desktop-kit/actions/workflows/check.yml/badge.svg)](https://github.com/arjith/copilot-kubuntu-desktop-kit/actions/workflows/check.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-Focused Copilot workflows for a KDE Wayland workstation, with optional,
-permission-based control of local applications.
+Use Copilot CLI with desktop apps on **KDE Wayland**. The first exercise is
+small: operate KCalc, calculate **19 x 23**, and verify **437** in the window.
 
-The kit ships no personal profile, credentials or background daemon.
-Desktop control uses the existing **computer-use-linux** project; this
-repository packages safer onboarding and environment-specific guidance.
+This is an unofficial integration of
+[computer-use-linux](https://github.com/agent-sh/computer-use-linux), not a new
+desktop-control engine. It adds a Copilot agent, pinned backend setup and
+removal, and six skills for KDE, Python and GPU work.
 
-## Start with the plugin
+Backend setup is per-user and opt-in. No root access, global Copilot profile
+replacement or automatic permission approval. Screenshots and app text can
+still enter model context; local stdio does not make the workflow offline.
 
-Use a recent Copilot CLI supporting Agent Plugins 1.0. The initial tested host
-is **1.0.112** on Kubuntu/KDE Wayland.
+## Try the first task
 
-```bash
-copilot plugin install arjith/copilot-kubuntu-desktop-kit
-```
+You need your own working Copilot CLI, **Python 3.12+**, KDE Wayland on Linux
+x86_64, and KCalc. The initial tested Copilot version is **1.0.112**.
+Other host configurations are not yet verified.
 
-The tested CLI accepts this command but warns that direct repository installs
-are deprecated. [Marketplace review](https://github.com/github/awesome-copilot/issues/6437)
-is pending; the plugin is **not yet listed** there. Alternatively, review the
-tagged checkout and load it directly:
+Review the tagged source, then inspect the backend installation plan:
 
 ```bash
 git clone --branch v0.1.0 --depth 1 https://github.com/arjith/copilot-kubuntu-desktop-kit.git
 cd copilot-kubuntu-desktop-kit
+python3 scripts/desktop_backend.py install
+```
+
+If you accept that plan, install the pinned backend, check readiness and load
+the plugin:
+
+```bash
+python3 scripts/desktop_backend.py install --apply
+python3 scripts/desktop_backend.py doctor
 copilot --plugin-dir "$PWD" skill list
 copilot --plugin-dir "$PWD"
 ```
 
-Restart Copilot after installation. Choose an agent with `/agent`.
-If a personal agent has the same name, choose the plugin-qualified entry,
-for example `/agent copilot-kubuntu-desktop-kit:desktop-operator`.
-Start with the [calculator example](examples/README.md#calculator-first-success).
-This is an experimental preview; check [SPEC.md](SPEC.md) for verified scope
-and remaining compatibility gates.
+Open KCalc yourself. Choose
+`/agent copilot-kubuntu-desktop-kit:desktop-operator` and use the
+[calculator prompt](examples/README.md#calculator-first-success).
+Approve any portal dialog yourself. Success means **437 is visible in KCalc**,
+not just that the assistant returned the right answer.
+
+[Report your result](https://github.com/arjith/copilot-kubuntu-desktop-kit/issues/new?template=compatibility.yml).
+One sanitized pass/fail report is more useful than a full desktop screenshot.
+This is an experimental preview; [SPEC.md](SPEC.md) records the verified scope.
+
+## What else is included
 
 | Agent | Role |
 |---|---|
@@ -56,17 +69,7 @@ desktop server during installation. The desktop agent starts its own local
 MCP (`kubuntu-desktop`) only when selected. It does not replace an existing
 globally configured `computer-use-linux` server.
 
-Review the backend installation plan:
-
-```bash
-git clone https://github.com/arjith/copilot-kubuntu-desktop-kit.git
-cd copilot-kubuntu-desktop-kit
-python3 scripts/desktop_backend.py install
-python3 scripts/desktop_backend.py install --apply
-python3 scripts/desktop_backend.py doctor
-```
-
-This downloads three SHA-256-pinned Linux x86_64 binaries from the upstream
+The explicit backend install above downloads three SHA-256-pinned Linux x86_64 binaries from the upstream
 GitHub release into the standard per-user data directory. No root access,
 `uinput` permission changes, firewall rules or persistent network listener
 are required.
@@ -79,6 +82,12 @@ describe the app, outcome and limits—for example:
 KDE may ask you to select a screen and approve remote control. **Approve it
 yourself.** A readiness report does not prove that capture or input is allowed.
 Never ask the agent to enter a password, MFA code or approve its own permissions.
+
+For a persistent plugin installation, the tested CLI also accepts
+`copilot plugin install arjith/copilot-kubuntu-desktop-kit`, but warns that
+direct repository installs are deprecated. Restart Copilot after installing.
+[Marketplace review](https://github.com/github/awesome-copilot/issues/6437)
+is pending; the plugin is **not yet listed** there.
 
 ## What is—and is not—promised
 
@@ -107,6 +116,9 @@ python3 scripts/desktop_backend.py uninstall --apply
 copilot plugin uninstall copilot-kubuntu-desktop-kit
 ```
 
+The last command applies only if you installed the plugin persistently.
+For `--plugin-dir`, restart Copilot without that flag.
+
 Removal refuses modified binaries, symlinks and unknown files. It never
 deletes personal Copilot settings or another backend installation.
 Updates require an intentional version/hash change and a new verification run;
@@ -126,3 +138,4 @@ Tests use synthetic temporary directories and do not control the live desktop.
 See [NOTICE.md](NOTICE.md) for upstream attribution and licensing.
 For contributions, see [CONTRIBUTING.md](CONTRIBUTING.md). The
 [launch plan](docs/LAUNCH.md) prioritizes verified users over star counts.
+If the kit is useful, a star helps you find it again when updates land.
