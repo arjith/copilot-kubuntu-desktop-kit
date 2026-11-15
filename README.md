@@ -1,5 +1,8 @@
 # Copilot Kubuntu Desktop Kit
 
+[![Checks](https://github.com/arjith/copilot-kubuntu-desktop-kit/actions/workflows/check.yml/badge.svg)](https://github.com/arjith/copilot-kubuntu-desktop-kit/actions/workflows/check.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 Focused Copilot workflows for a KDE Wayland workstation, with optional,
 permission-based control of local applications.
 
@@ -16,7 +19,6 @@ is **1.0.112** on Kubuntu/KDE Wayland.
 copilot plugin install arjith/copilot-kubuntu-desktop-kit
 ```
 
-While this repository is private, your signed-in GitHub account needs access.
 For a local checkout:
 
 ```bash
@@ -26,6 +28,9 @@ copilot --plugin-dir "$PWD" skill list
 Restart Copilot after installation. Choose an agent with `/agent`.
 If a personal agent has the same name, choose the plugin-qualified entry,
 for example `/agent copilot-kubuntu-desktop-kit:desktop-operator`.
+Start with the [calculator example](examples/README.md#calculator-first-success).
+This is an experimental preview; check [SPEC.md](SPEC.md) for verified scope
+and remaining compatibility gates.
 
 | Agent | Role |
 |---|---|
@@ -82,9 +87,8 @@ Never ask the agent to enter a password, MFA code or approve its own permissions
   architectures and compositor/client combinations are not claimed tested.
 - Agent prompts reduce mistakes; they are not an authorization system.
 
-The related [iPad RDP kit](https://github.com/arjith/kubuntu-rdp-ipad-kit)
-is separate. Shared-desktop RDP, scaling and cursor behavior need their own
-verification; installing this plugin does not fix them.
+Remote desktop is a separate concern. Shared-desktop RDP, scaling and cursor
+behavior need their own verification; installing this plugin does not fix them.
 
 ## Remove or update
 
@@ -114,3 +118,5 @@ shellcheck scripts/desktop-mcp.sh
 
 Tests use synthetic temporary directories and do not control the live desktop.
 See [NOTICE.md](NOTICE.md) for upstream attribution and licensing.
+For contributions, see [CONTRIBUTING.md](CONTRIBUTING.md). The
+[launch plan](docs/LAUNCH.md) prioritizes verified users over star counts.

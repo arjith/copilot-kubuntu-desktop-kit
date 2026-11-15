@@ -1,6 +1,6 @@
 # Workstation kit specification
 
-**Version:** 0.1 private pilot. Guidance and opt-in integration, not an
+**Version:** 0.1 experimental preview. Guidance and opt-in integration, not an
 authorization system or a promise of unattended GUI reliability.
 
 | Requirement | Acceptance evidence |

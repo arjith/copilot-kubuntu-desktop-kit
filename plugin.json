@@ -4,6 +4,11 @@
   "version": "0.1.0",
   "description": "Focused Kubuntu, KDE Wayland, Python and GPU workflows with opt-in local desktop control.",
   "repository": "https://github.com/arjith/copilot-kubuntu-desktop-kit",
+  "homepage": "https://github.com/arjith/copilot-kubuntu-desktop-kit#readme",
+  "author": {
+    "name": "Kubuntu Desktop Kit contributors",
+    "url": "https://github.com/arjith/copilot-kubuntu-desktop-kit/graphs/contributors"
+  },
   "license": "MIT",
   "keywords": ["copilot", "kubuntu", "kde", "wayland", "desktop", "python", "cuda"]
 }
