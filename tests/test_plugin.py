@@ -83,8 +83,15 @@ class PluginTest(unittest.TestCase):
             path = ROOT / name
             self.assertTrue(path.is_file() and not path.is_symlink(), name)
             data = path.read_bytes()
-            self.assertNotIn(b"\0", data, name)
-            text = data.decode()
+            if name == "site/assets/social.png":
+                self.assertEqual(data[:8], b"\x89PNG\r\n\x1a\n")
+                self.assertEqual(int.from_bytes(data[16:20], "big"), 1200)
+                self.assertEqual(int.from_bytes(data[20:24], "big"), 630)
+                self.assertTrue(path.with_suffix(".svg").is_file())
+                text = data.decode("latin1")
+            else:
+                self.assertNotIn(b"\0", data, name)
+                text = data.decode()
             for pattern in patterns:
                 self.assertIsNone(re.search(pattern, text), path.relative_to(ROOT))
 

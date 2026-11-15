@@ -1,5 +1,7 @@
 # Copilot Kubuntu Desktop Kit
 
+[Website and setup guide](https://arjith.github.io/copilot-kubuntu-desktop-kit/)
+
 [![Checks](https://github.com/arjith/copilot-kubuntu-desktop-kit/actions/workflows/check.yml/badge.svg)](https://github.com/arjith/copilot-kubuntu-desktop-kit/actions/workflows/check.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
