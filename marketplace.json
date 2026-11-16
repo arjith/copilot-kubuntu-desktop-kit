@@ -1,0 +1,31 @@
+{
+  "name": "kubuntu-desktop-kit",
+  "metadata": {
+    "description": "Maintainer-run marketplace for the unofficial Copilot Kubuntu Desktop Kit.",
+    "version": "1.0.0"
+  },
+  "owner": {
+    "name": "Kubuntu Desktop Kit contributors"
+  },
+  "plugins": [
+    {
+      "name": "copilot-kubuntu-desktop-kit",
+      "description": "Copilot CLI skills and agents for KDE Wayland with opt-in desktop control.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Kubuntu Desktop Kit contributors",
+        "url": "https://github.com/arjith/copilot-kubuntu-desktop-kit/graphs/contributors"
+      },
+      "repository": "https://github.com/arjith/copilot-kubuntu-desktop-kit",
+      "homepage": "https://arjith.github.io/copilot-kubuntu-desktop-kit/",
+      "license": "MIT",
+      "keywords": ["copilot", "kubuntu", "kde", "wayland", "desktop"],
+      "source": {
+        "source": "github",
+        "repo": "arjith/copilot-kubuntu-desktop-kit",
+        "ref": "v0.1.0",
+        "sha": "02d3a7f653c6038e92729b709c64cdb3a4135d49"
+      }
+    }
+  ]
+}

@@ -56,6 +56,31 @@ class PluginTest(unittest.TestCase):
         self.assertNotIn("execute", data["tools"])
         self.assertFalse((ROOT / "mcp.json").exists())
 
+    def test_marketplace_pins_a_release_matching_the_source_manifest(self):
+        catalog = json.loads((ROOT / "marketplace.json").read_text())
+        self.assertRegex(catalog["name"], r"^[a-z0-9-]+$")
+        self.assertEqual(len(catalog["plugins"]), 1)
+        plugin = catalog["plugins"][0]
+        source = plugin["source"]
+        self.assertEqual(source["source"], "github")
+        self.assertEqual(source["repo"], "arjith/copilot-kubuntu-desktop-kit")
+        self.assertNotIn("path", source)
+        self.assertRegex(source["sha"], r"^[0-9a-f]{40}$")
+        self.assertEqual(source["ref"], "v" + plugin["version"])
+        revision = subprocess.check_output(
+            ["git", "-C", str(ROOT), "rev-parse", source["ref"] + "^{commit}"],
+            text=True,
+        ).strip()
+        self.assertEqual(revision, source["sha"])
+        manifest = json.loads(
+            subprocess.check_output(
+                ["git", "-C", str(ROOT), "show", source["sha"] + ":plugin.json"],
+                text=True,
+            )
+        )
+        for field in ("name", "version", "license"):
+            self.assertEqual(plugin[field], manifest[field])
+
     def test_original_files_do_not_contain_machine_state(self):
         patterns = [
             r"/home/[A-Za-z0-9_.-]+/",
