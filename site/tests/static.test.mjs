@@ -135,6 +135,7 @@ test("the install journey separates review, plan, apply, doctor and local loadin
   assert.equal(command("apply-command"), "python3 scripts/desktop_backend.py install --apply\npython3 scripts/desktop_backend.py doctor");
   assert.equal(command("load-command"), 'copilot --plugin-dir "$PWD" skill list\ncopilot --plugin-dir "$PWD"');
   assert.equal(command("agent-command"), "/agent copilot-kubuntu-desktop-kit:desktop-operator");
+  assert.equal(command("marketplace-command"), "copilot plugin marketplace add arjith/copilot-kubuntu-desktop-kit\ncopilot plugin install copilot-kubuntu-desktop-kit@kubuntu-desktop-kit");
   assert.equal(command("remove-plan-command"), "python3 scripts/desktop_backend.py uninstall");
   assert.equal(command("remove-apply-command"), "python3 scripts/desktop_backend.py uninstall --apply");
   assert.equal(lock.tag, "v0.7.53");
@@ -155,7 +156,7 @@ test("the KCalc prompt is a bounded manual acceptance task, with visible-result 
   assert.match(html, /does <strong>not<\/strong> make model inference offline or private/);
   assert.match(html, /not automatically password-redacted/);
   assert.match(html, /issues\/new\?template=compatibility\.yml/);
-  assert.match(html, /Marketplace review is pending/);
+  assert.match(html, /Awesome Copilot review is still pending/);
 });
 
 test("semantics and progressive enhancement do not depend on JavaScript", () => {

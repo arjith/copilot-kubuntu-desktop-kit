@@ -156,10 +156,13 @@ copilot --plugin-dir "$PWD"</code></pre>
               <pre tabindex="0" aria-label="Select the desktop operator inside Copilot"><code id="agent-command">/agent copilot-kubuntu-desktop-kit:desktop-operator</code></pre>
             </div>
             <details class="disclosure">
-              <summary>Why not a persistent install?</summary>
+              <summary>Prefer a persistent install?</summary>
               <div class="disclosure-content">
-                <p>Direct repository installation works on the tested CLI, but that route is deprecated. This guide uses <code>--plugin-dir</code> instead.</p>
-                <p><a href="https://github.com/github/awesome-copilot/issues/6437">Marketplace review is pending.</a> The kit is not listed or endorsed by the marketplace.</p>
+                <p>The local-loading path above is useful for reviewing the source first. A maintainer-run catalog also installs the same pinned v0.1.0 plugin without the deprecated direct-install route:</p>
+                <pre tabindex="0" aria-label="Register the maintainer marketplace and install the pinned plugin"><code id="marketplace-command">copilot plugin marketplace add arjith/copilot-kubuntu-desktop-kit
+copilot plugin install copilot-kubuntu-desktop-kit@kubuntu-desktop-kit</code></pre>
+                <p>Restart Copilot after installing. This installs the skills and agents, not the backend; the explicit backend setup and portal approval steps still apply.</p>
+                <p>This is the project's own catalog, not a GitHub/KDE endorsement. <a href="https://github.com/github/awesome-copilot/issues/6437">Awesome Copilot review is still pending.</a></p>
               </div>
             </details>
           </article>
@@ -302,7 +305,7 @@ copilot --plugin-dir "$PWD"</code></pre>
           <p><strong>Restart Copilot without <code>--plugin-dir</code>.</strong> Removal refuses modified binaries, symlinks and unknown files. It does not delete personal Copilot settings or another backend installation.</p>
           <details class="disclosure">
             <summary>If you previously installed persistently</summary>
-            <div class="disclosure-content"><p>After backend removal, run <code>copilot plugin uninstall copilot-kubuntu-desktop-kit</code> and restart Copilot. This is not needed for the local-loading path above.</p></div>
+            <div class="disclosure-content"><p>After backend removal, run <code>copilot plugin uninstall copilot-kubuntu-desktop-kit@kubuntu-desktop-kit</code> for the maintainer catalog install, or <code>copilot plugin uninstall copilot-kubuntu-desktop-kit</code> for an older direct install, then restart Copilot. Remove the optional catalog with <code>copilot plugin marketplace remove kubuntu-desktop-kit</code>. None of these commands are needed for the local-loading path above.</p></div>
           </details>
         </div>
       </section>

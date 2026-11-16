@@ -85,11 +85,25 @@ KDE may ask you to select a screen and approve remote control. **Approve it
 yourself.** A readiness report does not prove that capture or input is allowed.
 Never ask the agent to enter a password, MFA code or approve its own permissions.
 
-For a persistent plugin installation, the tested CLI also accepts
-`copilot plugin install arjith/copilot-kubuntu-desktop-kit`, but warns that
-direct repository installs are deprecated. Restart Copilot after installing.
-[Marketplace review](https://github.com/github/awesome-copilot/issues/6437)
-is pending; the plugin is **not yet listed** there.
+## Install persistently without the deprecated direct-install route
+
+The versioned checkout above remains the reviewable first-task path. For a
+persistent plugin installation, add this project's **maintainer-run**
+marketplace:
+
+```bash
+copilot plugin marketplace add arjith/copilot-kubuntu-desktop-kit
+copilot plugin install copilot-kubuntu-desktop-kit@kubuntu-desktop-kit
+```
+
+The catalog pins the plugin to the reviewed **v0.1.0** commit, not a moving
+branch. This installs the skills and agents, **not** the desktop backend.
+Keep the separate backend plan/apply and portal approval steps above.
+Restart Copilot and choose the namespaced desktop agent.
+
+This catalog is not Awesome Copilot or a GitHub/KDE endorsement.
+[Awesome Copilot review](https://github.com/github/awesome-copilot/issues/6437)
+is still pending; the plugin is **not yet listed** there.
 
 ## What is—and is not—promised
 
@@ -115,11 +129,15 @@ installation **before** uninstalling the plugin:
 ```bash
 python3 scripts/desktop_backend.py uninstall
 python3 scripts/desktop_backend.py uninstall --apply
-copilot plugin uninstall copilot-kubuntu-desktop-kit
+copilot plugin uninstall copilot-kubuntu-desktop-kit@kubuntu-desktop-kit
 ```
 
-The last command applies only if you installed the plugin persistently.
+The last command applies to the maintainer marketplace installation.
+For an older direct installation, use
+`copilot plugin uninstall copilot-kubuntu-desktop-kit`.
 For `--plugin-dir`, restart Copilot without that flag.
+Remove the optional catalog with
+`copilot plugin marketplace remove kubuntu-desktop-kit` if no longer needed.
 
 Removal refuses modified binaries, symlinks and unknown files. It never
 deletes personal Copilot settings or another backend installation.

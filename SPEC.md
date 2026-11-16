@@ -30,6 +30,12 @@ copilot --plugin-dir "$PWD" skill list
 
 Isolated-host checks confirmed private GitHub installation, six-skill discovery
 and namespaced agent selection without changing personal configuration.
+The maintainer-run GitHub marketplace route was separately tested in a fresh,
+credential-free home: catalog registration, immutable v0.1.0 installation,
+enabled-plugin discovery, six skills, four agents, then plugin/catalog removal.
+No backend binaries were implicitly installed. A local-directory catalog is
+not an equivalent substitute for this test: this CLI build pruned that local
+catalog's installed copy during discovery, so the documented route uses GitHub.
 On the initial Kubuntu/KDE Wayland host, a user-approved cropped test-window
 capture, coordinate click, portal keyboard press/backspace and accessibility
 readback also passed. Those results do not imply a broad device matrix.
