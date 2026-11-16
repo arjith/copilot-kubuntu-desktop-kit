@@ -939,6 +939,24 @@ pre:focus-visible {
   font-size: 0.8rem;
 }
 
+.evidence-capture {
+  max-width: 32rem;
+  margin-block-end: 1.5rem;
+}
+
+.evidence-capture img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+}
+
+.evidence-capture figcaption {
+  margin-block-start: 0.75rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
 .evidence-item {
   display: grid;
   grid-template-columns: 1.25rem 1fr;

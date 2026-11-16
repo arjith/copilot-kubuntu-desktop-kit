@@ -149,7 +149,7 @@ test("the KCalc prompt is a bounded manual acceptance task, with visible-result 
   const prompt = html.match(/id="kcalc-prompt"[^>]*>([^<]+)<\/blockquote>/)[1];
   assert.equal(prompt, "In the KCalc window, calculate 19 multiplied by 23 using the visible calculator controls. Read the result back. Do not use a shell, other applications, or change the calculator's settings. Stop if the target is ambiguous.");
   assert.match(html, /Open KCalc yourself/);
-  assert.match(html, /not a recorded demonstration/);
+  assert.match(html, /A verified run is shown/);
   assert.match(html, /class="result-value">437/);
   assert.match(html, /correct answer in chat/);
   assert.match(html, /Permission denied\? Stop/);

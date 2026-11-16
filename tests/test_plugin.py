@@ -1,3 +1,4 @@
+import hashlib
 import json
 import re
 import subprocess
@@ -113,6 +114,13 @@ class PluginTest(unittest.TestCase):
                 self.assertEqual(int.from_bytes(data[16:20], "big"), 1200)
                 self.assertEqual(int.from_bytes(data[20:24], "big"), 630)
                 self.assertTrue(path.with_suffix(".svg").is_file())
+                text = data.decode("latin1")
+            elif name == "site/assets/kcalc-result.png":
+                self.assertEqual(
+                    hashlib.sha256(data).hexdigest(),
+                    "f5348cfe765b2c9356a8ffe03b6817df94cc36242d2a89a4fc121bf989302d8d",
+                    "A changed capture requires renewed privacy review and publication consent.",
+                )
                 text = data.decode("latin1")
             else:
                 self.assertNotIn(b"\0", data, name)

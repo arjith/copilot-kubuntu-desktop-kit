@@ -6,9 +6,10 @@ desktop while being developed or tested.
 
 - Keep installers dependency-free, explicit, reversible, and per-user.
 - Never weaken TLS, portal consent, authentication, or tool approvals.
-- Do not ship account names, machine addresses, logs, keys, desktop screenshots,
-  tokens, compiled executables, or session state. Website raster illustrations
-  need an authored SVG source and an explicit publication-check allowlist entry.
+- Do not ship account names, machine addresses, logs, keys, private desktop
+  content, tokens, compiled executables, or session state. A user-approved crop
+  of a disposable test app needs visual privacy review and an exact image-hash
+  publication allowlist entry. Raster illustrations need an authored SVG source.
 - Use the documented Agent Plugins 1.0 layout. Do not pin agent models.
 - Keep the backend version and hashes in `backend.lock.json`.
 - Run `uv run python -m unittest discover -s tests`, Ruff, and ShellCheck.

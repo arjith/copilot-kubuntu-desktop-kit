@@ -48,6 +48,13 @@ image model or third-party media is used. Both social metadata formats include
 alternate text. The wide and narrow architecture SVGs also have titles and
 descriptions, with an HTML image alternative.
 
+`assets/kcalc-result.png` is a separate, user-approved capture of a disposable
+KCalc window after the packaged desktop agent completed the semantic AT-SPI
+task. Its exact bytes are allowlisted by the publication test after visual
+privacy review. It is not a recording or evidence of portal-pointer delivery.
+The browser check scrolls this lazy-loaded image into view before decoding
+images for layout checks.
+
 ## Deployment boundary
 
 The parent-owned Pages workflow should upload the contents of `site/`, with

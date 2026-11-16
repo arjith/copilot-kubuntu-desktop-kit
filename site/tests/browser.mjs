@@ -289,6 +289,18 @@ try {
     assert.ok(tree.nodes.some((node) => node.role?.value === "image" && node.name?.value.includes("local stdio")));
   });
 
+  await check("the approved calculator capture loads when scrolled into view", async () => {
+    assert.equal(await evaluate('document.querySelector(".evidence-capture img").loading'), "lazy");
+    await evaluate('document.querySelector(".evidence-capture img").scrollIntoView({block:"center",behavior:"instant"})');
+    await until('document.querySelector(".evidence-capture img").complete && document.querySelector(".evidence-capture img").naturalWidth > 0');
+    const dimensions = await evaluate(`(() => {
+      const image = document.querySelector(".evidence-capture img");
+      return [image.naturalWidth, image.naturalHeight];
+    })()`);
+    assert.deepEqual(dimensions, [960, 763]);
+    await evaluate('window.scrollTo({top:0,behavior:"instant"})');
+  });
+
   for (const color of ["light", "dark"]) {
     for (const width of [320, 390, 480, 768, 1024, 1440, 1920]) {
       await check(`${width}px ${color}: reflow, containment, control size and text contrast`, async () => {

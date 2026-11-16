@@ -175,7 +175,7 @@ copilot plugin install copilot-kubuntu-desktop-kit@kubuntu-desktop-kit</code></p
             <p class="eyebrow">02 / Manual acceptance task</p>
             <h2 id="task-title">One window.<br>One visible result.</h2>
             <p>Open KCalc yourself. With <code>desktop-operator</code> selected, give it this bounded task. Approve any capture or control portal yourself.</p>
-            <p class="task-disclaimer">This is a task to try,<br>not a recorded demonstration.</p>
+            <p class="task-disclaimer">A verified run is shown<br>in the evidence section.</p>
           </div>
           <div class="task-workspace">
             <div class="prompt-heading"><h3>Give Copilot this prompt</h3><button class="copy-button" type="button" data-copy="kcalc-prompt" data-label="KCalc task prompt" hidden>Copy prompt</button></div>
@@ -265,6 +265,10 @@ copilot plugin install copilot-kubuntu-desktop-kit@kubuntu-desktop-kit</code></p
           <a class="text-link" href="https://github.com/arjith/copilot-kubuntu-desktop-kit/blob/02d3a7f653c6038e92729b709c64cdb3a4135d49/SPEC.md">Read the acceptance scope <span aria-hidden="true">↗</span></a>
         </div>
         <div class="evidence-content">
+          <figure class="evidence-capture">
+            <img src="assets/kcalc-result.png" width="960" height="763" loading="lazy" alt="The actual KCalc test window showing 437 after the packaged desktop agent calculated 19 times 23 through accessibility buttons.">
+            <figcaption>The packaged desktop agent completed this task through semantic AT-SPI controls in KCalc 26.08.1. User-approved, calculator-only capture. This does not verify portal-pointer or keyboard input.</figcaption>
+          </figure>
           <div class="evidence-item">
             <span class="evidence-symbol" aria-hidden="true">✓</span>
             <div><h3>Synthetic tests &amp; installation gates</h3><p>20 synthetic tests and the canonical plugin, skill and marketplace installation gates passed. These checks cover packaging and safety behavior—not broad GUI reliability or marketplace listing.</p></div>

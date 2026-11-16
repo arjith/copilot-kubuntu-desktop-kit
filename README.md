@@ -51,6 +51,17 @@ not just that the assistant returned the right answer.
 One sanitized pass/fail report is more useful than a full desktop screenshot.
 This is an experimental preview; [SPEC.md](SPEC.md) records the verified scope.
 
+## A completed first task
+
+The packaged `desktop-operator` agent calculated **19 x 23** in a fresh KCalc
+window using its accessibility buttons and read back **437**. This capture
+contains only that test window and was approved for publication.
+
+<img src="site/assets/kcalc-result.png" alt="The real KCalc test window displaying 437 after the packaged desktop agent calculated 19 times 23." width="480" height="382">
+
+This verifies the **semantic AT-SPI route** on one configuration. It does not
+establish portal-pointer, keyboard-layout or multi-monitor reliability.
+
 ## What else is included
 
 | Agent | Role |

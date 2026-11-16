@@ -19,6 +19,12 @@ The demonstration is successful only if the GUI changed—not if the model
 calculated the answer independently. Approve capture/control dialogs directly
 and interrupt if an unrelated window is targeted.
 
+**Observed run:** the packaged agent completed this calculation in KCalc
+26.08.1 through semantic AT-SPI button actions and read back 437. See the
+[approved calculator-only capture](../site/assets/kcalc-result.png).
+The run used Copilot CLI 1.0.112 and backend v0.7.53 with a fresh application
+configuration. It is not a portal-pointer or keyboard-input test.
+
 ## Disposable editor: text fidelity
 
 Open a **new, empty** Kate/KWrite document. Do not use an existing document.

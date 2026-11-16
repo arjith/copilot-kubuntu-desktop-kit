@@ -14,5 +14,9 @@ The plugin format and host behavior come from GitHub Copilot CLI and the
 KDE, Qt, Python, uv and NVIDIA tooling are separate dependencies with their
 own licenses. This kit does not imply endorsement by those projects.
 
+The approved `site/assets/kcalc-result.png` capture shows KDE's KCalc application
+in a disposable test window. It is an actual app capture, not an illustration
+or a claim of KDE endorsement.
+
 This is integration and workflow packaging, not a new desktop automation
 engine. It does not replace Wayland permissions or create a security sandbox.

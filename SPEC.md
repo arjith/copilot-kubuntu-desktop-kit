@@ -40,6 +40,15 @@ On the initial Kubuntu/KDE Wayland host, a user-approved cropped test-window
 capture, coordinate click, portal keyboard press/backspace and accessibility
 readback also passed. Those results do not imply a broad device matrix.
 
+A later controlled run used the actual plugin-qualified `desktop-operator`
+and its own `kubuntu-desktop` MCP, with the separate global controller disabled.
+The agent invoked KCalc 26.08.1 accessibility buttons for 19 x 23, verified 437
+in the app, and saved an app-window-only capture with explicit user approval.
+The published image was visually reviewed and contains no other windows.
+This passes the semantic AT-SPI first-task gate, not portal pointer/keyboard
+delivery; a separate pointer attempt timed out before input and remains
+unverified. The test app used an isolated configuration and was closed afterward.
+
 A readiness check is not capture permission. Interruption, keyboard-layout,
 multi-monitor and fractional-scaling coverage still need explicit testing before
 advertising additional configurations as supported.
